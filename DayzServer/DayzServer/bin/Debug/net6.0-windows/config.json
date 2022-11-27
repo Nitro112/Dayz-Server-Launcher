@@ -1,0 +1,18 @@
+{
+  "dayzDirectory": "D:\\DAYZSAServer\\DayZServer_x64.exe",
+  "modsDirectory": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\DayZ\\!Workshop",
+  "launchParams": "-config=serverDZ.cfg -profiles=Profiles -nosplash -noPause -noBenchmark -filePatching -doLogs -scriptDebug=true",
+  "modlist": [
+    "@CF",
+    "@Dabs Framework",
+    "@DayZ-Expansion-Licensed",
+    "@DayZ-Expansion-Bundle",
+    "@ZomBerry Admin Tools",
+    "@CarCover",
+    "@Mass\u0027sManyItemOverhaul",
+    "@SNAFU Weapons",
+    "@MunghardsItempack",
+    "@Chaos Server Pack",
+    "@Modular Vest System"
+  ]
+}
