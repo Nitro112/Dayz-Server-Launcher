@@ -6,12 +6,12 @@ Easy way to add mods &amp; launch parameters to your dayz server
 The mods are in the order you check them. When "Start Server" is clicked, it generates config.json where you can fine tune mods order if you like
 
 <h1>How To Use</h1>
-1. Set your DayzServer_x64.exe path
-2. Set your mods directory, for example workshop folder that holds all dayz mods.
-3. Choose all the mods you wan't in your server from listbox below. There should be list of mods after mods directory was set.
+1. Set your DayzServer_x64.exe path.<br>
+2. Set your mods directory, for example workshop folder that holds all dayz mods.<br>
+3. Choose all the mods you wan't in your server from listbox below. There should be list of mods after mods directory was set.<br><br>
 
-When "Start Server" is clicked, it generates config.json where you can fine tune mods order and launchparameters if you like
+When "Start Server" is clicked, it generates config.json where you can fine tune mods order and launchparameters if you like<br>
 
 <h2>NOTE</h2>
-This copies all the mods you selected from the listbox, to your Dayz Server folder.
+This copies all the mods you selected from the listbox, to your Dayz Server folder.<br>
 This copies also all the keys from individual mod to the DayzServer/Keys folder automatically.
