@@ -4,15 +4,16 @@
   "launchParams": "-config=serverDZ.cfg -profiles=Profiles -nosplash -noPause -noBenchmark -filePatching -doLogs -scriptDebug=true",
   "modlist": [
     "@CF",
-    "@Dabs Framework",
-    "@DayZ-Expansion-Licensed",
-    "@DayZ-Expansion-Bundle",
-    "@ZomBerry Admin Tools",
-    "@CarCover",
-    "@Mass\u0027sManyItemOverhaul",
-    "@SNAFU Weapons",
-    "@MunghardsItempack",
     "@Chaos Server Pack",
-    "@Modular Vest System"
+    "@DayZ-Expansion",
+    "@DayZ-Expansion-Book",
+    "@DayZ-Expansion-Bundle",
+    "@DayZ-Expansion-Chat",
+    "@DayZ-Expansion-Core",
+    "@DayZ-Expansion-Licensed",
+    "@DayZ-Expansion-Market",
+    "@DayZ-Expansion-Name-Tags",
+    "@DayZ-Expansion-Vehicles",
+    "@Breachingcharge"
   ]
 }

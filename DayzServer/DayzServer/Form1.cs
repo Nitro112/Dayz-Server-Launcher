@@ -5,7 +5,6 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Net.Http.Json;
 using System.Xml.Linq;
-
 namespace DayzServer
 {
     public partial class Form1 : Form
@@ -49,7 +48,7 @@ namespace DayzServer
             LoadConfiguration();
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void searchBox_TextChanged(object sender, EventArgs e)
         {
             Regex search = new Regex(searchBox.Text, RegexOptions.IgnoreCase);
             searchResults.Clear();
@@ -89,7 +88,7 @@ namespace DayzServer
             }
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void modPath_TextChanged(object sender, EventArgs e)
         {
             modDirectory = modPath.Text;
             GetFiles(modDirectory);
@@ -188,36 +187,40 @@ namespace DayzServer
                 string destination = Path.Combine(dayzRootPath, destFolder);
                 if(!Directory.Exists(destination))
                 {
-                    Copy(source, destination);
+                    string keySouce = Path.Combine(source, "Keys");
+                    string keyDest = Path.Combine(dayzRootPath, "Keys");
+                    ServerMethods.Copy(source, destination);
+                    ServerMethods.CopyKeys(keySouce, keyDest);
                 }
             }
         }
 
-        public static void Copy(string sourceDirectory, string targetDirectory)
-        {
-            var diSource = new DirectoryInfo(sourceDirectory);
-            var diTarget = new DirectoryInfo(targetDirectory);
+        //public static void Copy(string sourceDirectory, string targetDirectory)
+        //{
+        //    var diSource = new DirectoryInfo(sourceDirectory);
+        //    var diTarget = new DirectoryInfo(targetDirectory);
 
-            CopyAll(diSource, diTarget);
-        }
+        //    ServerMethods.CopyAll(diSource, diTarget);
+        //}
 
-        public static void CopyAll(DirectoryInfo source, DirectoryInfo target)
-        {
-            Directory.CreateDirectory(target.FullName);
+        //public static void CopyAll(DirectoryInfo source, DirectoryInfo target)
+        //{
+        //    Directory.CreateDirectory(target.FullName);
 
-            // Copy each file into the new directory.
-            foreach (FileInfo fi in source.GetFiles())
-            {
-                fi.CopyTo(Path.Combine(target.FullName, fi.Name), true);
-            }
+        //    // Copy each file into the new directory.
+        //    foreach (FileInfo fi in source.GetFiles())
+        //    {
+        //        fi.CopyTo(Path.Combine(target.FullName, fi.Name), true);
+        //    }
 
-            // Copy each subdirectory using recursion.
-            foreach (DirectoryInfo diSourceSubDir in source.GetDirectories())
-            {
-                DirectoryInfo nextTargetSubDir =
-                    target.CreateSubdirectory(diSourceSubDir.Name);
-                CopyAll(diSourceSubDir, nextTargetSubDir);
-            }
-        }
+        //    // Copy each subdirectory using recursion.
+        //    foreach (DirectoryInfo diSourceSubDir in source.GetDirectories())
+        //    {
+        //        DirectoryInfo nextTargetSubDir =
+        //            target.CreateSubdirectory(diSourceSubDir.Name);
+        //        CopyAll(diSourceSubDir, nextTargetSubDir);
+        //    }
+        //}
+
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Projects\\C#\\DayzServer\\DayzServer\\DayzServer\\DayzServer.csproj": {}
+    "E:\\Unity\\Github\\DayzServerLauncher\\DayzServer\\DayzServer\\DayzServer.csproj": {}
   },
   "projects": {
-    "E:\\Projects\\C#\\DayzServer\\DayzServer\\DayzServer\\DayzServer.csproj": {
+    "E:\\Unity\\Github\\DayzServerLauncher\\DayzServer\\DayzServer\\DayzServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\C#\\DayzServer\\DayzServer\\DayzServer\\DayzServer.csproj",
+        "projectUniqueName": "E:\\Unity\\Github\\DayzServerLauncher\\DayzServer\\DayzServer\\DayzServer.csproj",
         "projectName": "DayzServer",
-        "projectPath": "E:\\Projects\\C#\\DayzServer\\DayzServer\\DayzServer\\DayzServer.csproj",
+        "projectPath": "E:\\Unity\\Github\\DayzServerLauncher\\DayzServer\\DayzServer\\DayzServer.csproj",
         "packagesPath": "C:\\Users\\Jussi\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\C#\\DayzServer\\DayzServer\\DayzServer\\obj\\",
+        "outputPath": "E:\\Unity\\Github\\DayzServerLauncher\\DayzServer\\DayzServer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jussi\\AppData\\Roaming\\NuGet\\NuGet.Config",

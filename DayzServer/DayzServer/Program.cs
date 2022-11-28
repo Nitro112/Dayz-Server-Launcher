@@ -13,5 +13,6 @@ namespace DayzServer
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
         }
+
     }
 }

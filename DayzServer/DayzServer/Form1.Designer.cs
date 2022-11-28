@@ -42,6 +42,11 @@
             this.DayZFolderBrowser = new System.Windows.Forms.FolderBrowserDialog();
             this.launchParamBox = new System.Windows.Forms.TextBox();
             this.lauchParamLabel = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -68,7 +73,7 @@
             this.modPath.ReadOnly = true;
             this.modPath.Size = new System.Drawing.Size(270, 23);
             this.modPath.TabIndex = 4;
-            this.modPath.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.modPath.TextChanged += new System.EventHandler(this.modPath_TextChanged);
             // 
             // DayzExeDialog
             // 
@@ -109,7 +114,7 @@
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(100, 23);
             this.searchBox.TabIndex = 8;
-            this.searchBox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
             // DayzExeButton
             // 
@@ -156,6 +161,38 @@
             this.lauchParamLabel.TabIndex = 13;
             this.lauchParamLabel.Text = "Launch Parameters";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(436, 24);
+            this.menuStrip1.TabIndex = 14;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsToolStripMenuItem1,
+            this.exitToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.settingsToolStripMenuItem.Text = "Edit";
+            // 
+            // settingsToolStripMenuItem1
+            // 
+            this.settingsToolStripMenuItem1.Name = "settingsToolStripMenuItem1";
+            this.settingsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.settingsToolStripMenuItem1.Text = "Settings";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -173,9 +210,14 @@
             this.Controls.Add(this.modPath);
             this.Controls.Add(this.dayzExePath);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "DayZ Server Launcher";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,5 +239,9 @@
         private FolderBrowserDialog DayZFolderBrowser;
         private TextBox launchParamBox;
         private Label lauchParamLabel;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem settingsToolStripMenuItem;
+        private ToolStripMenuItem settingsToolStripMenuItem1;
+        private ToolStripMenuItem exitToolStripMenuItem;
     }
 }
