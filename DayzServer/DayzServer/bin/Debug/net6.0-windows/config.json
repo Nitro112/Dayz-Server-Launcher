@@ -4,16 +4,6 @@
   "launchParams": "-config=serverDZ.cfg -profiles=Profiles -nosplash -noPause -noBenchmark -filePatching -doLogs -scriptDebug=true",
   "modlist": [
     "@CF",
-    "@Chaos Server Pack",
-    "@DayZ-Expansion",
-    "@DayZ-Expansion-Book",
-    "@DayZ-Expansion-Bundle",
-    "@DayZ-Expansion-Chat",
-    "@DayZ-Expansion-Core",
-    "@DayZ-Expansion-Licensed",
-    "@DayZ-Expansion-Market",
-    "@DayZ-Expansion-Name-Tags",
-    "@DayZ-Expansion-Vehicles",
-    "@Breachingcharge"
+    "@Chaos Server Pack"
   ]
 }

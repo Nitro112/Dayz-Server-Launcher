@@ -36,3 +36,4 @@ E:\Unity\Github\DayzServerLauncher\DayzServer\DayzServer\obj\Debug\net6.0-window
 E:\Unity\Github\DayzServerLauncher\DayzServer\DayzServer\obj\Debug\net6.0-windows\DayzServer.pdb
 E:\Unity\Github\DayzServerLauncher\DayzServer\DayzServer\obj\Debug\net6.0-windows\DayzServer.genruntimeconfig.cache
 E:\Unity\Github\DayzServerLauncher\DayzServer\DayzServer\obj\Debug\net6.0-windows\ref\DayzServer.dll
+E:\Unity\Github\DayzServerLauncher\DayzServer\DayzServer\obj\Debug\net6.0-windows\DayzServer.SettingsTab.resources

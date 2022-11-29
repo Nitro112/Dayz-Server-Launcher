@@ -46,6 +46,7 @@
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.experiementalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -183,6 +184,8 @@
             // 
             // settingsToolStripMenuItem1
             // 
+            this.settingsToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.experiementalToolStripMenuItem});
             this.settingsToolStripMenuItem1.Name = "settingsToolStripMenuItem1";
             this.settingsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.settingsToolStripMenuItem1.Text = "Settings";
@@ -192,6 +195,13 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            // 
+            // experiementalToolStripMenuItem
+            // 
+            this.experiementalToolStripMenuItem.Name = "experiementalToolStripMenuItem";
+            this.experiementalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.experiementalToolStripMenuItem.Text = "Experiemental";
+            this.experiementalToolStripMenuItem.Click += new System.EventHandler(this.experiementalToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -243,5 +253,6 @@
         private ToolStripMenuItem settingsToolStripMenuItem;
         private ToolStripMenuItem settingsToolStripMenuItem1;
         private ToolStripMenuItem exitToolStripMenuItem;
+        private ToolStripMenuItem experiementalToolStripMenuItem;
     }
 }

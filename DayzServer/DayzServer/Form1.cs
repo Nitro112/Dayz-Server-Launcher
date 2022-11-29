@@ -5,6 +5,9 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Net.Http.Json;
 using System.Xml.Linq;
+using System;
+using System.IO;
+
 namespace DayzServer
 {
     public partial class Form1 : Form
@@ -15,12 +18,16 @@ namespace DayzServer
         public List<string> searchResults = new List<string>();
         public List<string> selectedMods = new List<string>();
         public string modstring = "-mod=";
+
+        public Process server;
+
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             
 
@@ -28,18 +35,31 @@ namespace DayzServer
             //SaveToJson
             SaveConfiguration();
             MoveModsToDir();
-            Process server = new Process
-            {
-                StartInfo =
-                {
-                    FileName = dayzExePath.Text,
-                    Arguments = launchParamBox.Text + " " + modstring
-                }
-            };
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            //startInfo.CreateNoWindow = true;
+            //startInfo.UseShellExecute = true;
+            startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            startInfo.FileName = dayzExePath.Text;
+            startInfo.ErrorDialog = true;
+            startInfo.Arguments = launchParamBox.Text + " " + modstring;
 
-            server.Start();
+            //server = new Process
+            //{
+            //    StartInfo =
+            //    {
+            //        FileName = dayzExePath.Text,
+            //        Arguments = launchParamBox.Text + " " + modstring
+            //    }
+            //};
 
-            // Start server
+            //server.Start();
+            server = Process.Start(startInfo);
+
+            //wait for exit
+            await server.WaitForExitAsync();
+            server.EnableRaisingEvents = true;
+            server.Exited += new EventHandler(ProcessExited);
+
         }
 
 
@@ -111,7 +131,11 @@ namespace DayzServer
             }
 
         }
-
+        private void experiementalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var settings = new SettingsTab();
+            settings.ShowDialog();
+        }
 
         private void SaveConfiguration()
         {
@@ -195,32 +219,13 @@ namespace DayzServer
             }
         }
 
-        //public static void Copy(string sourceDirectory, string targetDirectory)
-        //{
-        //    var diSource = new DirectoryInfo(sourceDirectory);
-        //    var diTarget = new DirectoryInfo(targetDirectory);
-
-        //    ServerMethods.CopyAll(diSource, diTarget);
-        //}
-
-        //public static void CopyAll(DirectoryInfo source, DirectoryInfo target)
-        //{
-        //    Directory.CreateDirectory(target.FullName);
-
-        //    // Copy each file into the new directory.
-        //    foreach (FileInfo fi in source.GetFiles())
-        //    {
-        //        fi.CopyTo(Path.Combine(target.FullName, fi.Name), true);
-        //    }
-
-        //    // Copy each subdirectory using recursion.
-        //    foreach (DirectoryInfo diSourceSubDir in source.GetDirectories())
-        //    {
-        //        DirectoryInfo nextTargetSubDir =
-        //            target.CreateSubdirectory(diSourceSubDir.Name);
-        //        CopyAll(diSourceSubDir, nextTargetSubDir);
-        //    }
-        //}
-
+        // Process watcher, if exited 
+        private void ProcessExited(object sender, EventArgs e)
+        {
+            Console.WriteLine(
+            $"Exit time    : {server.ExitTime}\n" +
+            $"Exit code    : {server.ExitCode}\n" +
+            $"Elapsed time : {Math.Round((server.ExitTime - server.StartTime).TotalMilliseconds)}");
+        }
     }
 }
